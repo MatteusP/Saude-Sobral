@@ -25,10 +25,12 @@ function mult(a, b){
 
 function calcular(a){
     return function(b){
-        function(a,b){
-            return
-           }
-       }
+        return function(fn){
+            return fn(a,b)
+        }
+    }
 }
-console.log(calcular(60)(3)(som(a,b)))     
+
+
+console.log(calcular(60)(3)(mult))     
     
