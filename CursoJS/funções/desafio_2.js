@@ -7,8 +7,8 @@ const carrinho =[
 ]
 
 //1. apenas elementos que sejam frágeis, fragil: true
-//quantidade * preco = total
-//media dos totais
+//2. quantidade * preco = total
+//3. media dos totais
 const media = carrinho
     .filter(item => item.fragil)
     .map(item => item.qtde * item.preco)
