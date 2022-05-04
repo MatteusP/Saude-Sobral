@@ -44,8 +44,10 @@ function removerSeVazio(array) {
 }
 
 //função para excluir todas as linhas com determinado trecho "-->"
-function removerseIncluir(array, padraoTextual){
-    return array.filter(el => !el.includes(padraoTextual))
+function removerseIncluir(padraoTextual){
+    return function(array) {
+        return array.filter(el => !el.includes(padraoTextual))
+    }
 }
 
 // função para remover linhas apenas com numeros
@@ -56,6 +58,19 @@ function removerSeApenasNumero(array){
     })
 }
 
+//remover carateres das strings
+function removerSimbolos(simbolos){
+    return function(array){
+        return array.map(el => {
+            let textoSemSimbolos = el
+            simbolos.forEach(simbolo => {
+                textoSemSimbolos = textoSemSimbolos.split(simbolo).join('')
+            })
+            return textoSemSimbolos
+        })
+    }
+}
+
 
 module.exports = {
     lerDiretorio,
@@ -64,5 +79,6 @@ module.exports = {
     elementosTerminadosCom,
     removerSeVazio,
     removerseIncluir,
-    removerSeApenasNumero
+    removerSeApenasNumero,
+    removerSimbolos
 }
