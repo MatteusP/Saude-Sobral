@@ -72,6 +72,7 @@ function removerSimbolos(simbolos){
 }
 
 
+
 module.exports = {
     lerDiretorio,
     lerArquivo,

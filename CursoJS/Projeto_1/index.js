@@ -18,3 +18,4 @@ fn.lerDiretorio(caminho)
     .then(linhas => fn.removerSeApenasNumero(linhas))
     .then(fn.removerSimbolos(simbolos))
     .then(console.log)
+    
