@@ -34,8 +34,8 @@ function lerArquivos(caminhos) {
 }
 
 // filtra os arquivos para retirar os desnecessarios
-function elementosTerminadosCom(array, padrao) {
-    return array.filter(el => el.endsWith(padrao))
+function elementosTerminadosCom(array, padraoTextual) {
+    return array.filter(el => el.endsWith(padraoTextual))
 }
 
 //filtra a partir do array todas as linhas vazias
@@ -43,10 +43,19 @@ function removerSeVazio(array) {
     return array.filter(el => el.trim()) //trim tira os espaços em branco
 }
 
+//função para excluir todas as linhas com determinado trecho "-->"
+function removerseIncluir(array, padraoTextual){
+    return array.filter(el => !el.includes(padraoTextual))
+}
+
+
+
+
 module.exports = {
     lerDiretorio,
     lerArquivo,
     lerArquivos,
     elementosTerminadosCom,
-    removerSeVazio
+    removerSeVazio,
+    removerseIncluir
 }
