@@ -69,7 +69,7 @@ function removerSimbolos(simbolos){
             return textoSemSimbolos
         })
     }
-}
+} 
 
 
 
