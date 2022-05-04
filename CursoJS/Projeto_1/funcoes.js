@@ -33,14 +33,20 @@ function lerArquivos(caminhos) {
     return Promise.all(caminhos.map(caminho => lerArquivo(caminho)))
 }
 
-
+// filtra os arquivos para retirar os desnecessarios
 function elementosTerminadosCom(array, padrao) {
     return array.filter(el => el.endsWith(padrao))
+}
+
+//filtra a partir do array todas as linhas vazias
+function removerSeVazio(array) {
+    return array.filter(el => el.trim()) //trim tira os espaços em branco
 }
 
 module.exports = {
     lerDiretorio,
     lerArquivo,
     lerArquivos,
-    elementosTerminadosCom
+    elementosTerminadosCom,
+    removerSeVazio
 }
