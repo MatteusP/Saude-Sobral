@@ -48,7 +48,13 @@ function removerseIncluir(array, padraoTextual){
     return array.filter(el => !el.includes(padraoTextual))
 }
 
-
+// função para remover linhas apenas com numeros
+function removerSeApenasNumero(array){
+    return array.filter(el => {
+        const num = parseInt(el.trim())
+        return num !== num
+    })
+}
 
 
 module.exports = {
@@ -57,5 +63,6 @@ module.exports = {
     lerArquivos,
     elementosTerminadosCom,
     removerSeVazio,
-    removerseIncluir
+    removerseIncluir,
+    removerSeApenasNumero
 }
