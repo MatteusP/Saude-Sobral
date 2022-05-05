@@ -17,15 +17,13 @@ const separarPorpalavras = todoConteudo => todoConteudo.split(' ')
 
 //
 function agruparPalavras(palavras){
-    return palavras.reduce((agrupamento, palavra) => {
-        const p = palavra.toLowerCase()
-        if(agrupamento[p]){
-            agrupamento[p] += 1
-        }else{
-            agrupamento[p] = 1
-        }
-        return agrupamento
-    }, {})
+    return Object.values(palavras.reduce((acc, palavra) => {
+        const el = palavra.toLowerCase()
+        const qtde = acc[el] ? acc[el].qtde + 1: 1
+        acc[el] = { elemento: el, qtde}
+
+        return acc
+    }, {}))
 }
 
 
