@@ -3,7 +3,7 @@ const fn = require('./funcoes')
 
 const simbolos = [
     '.', '?', '-', '♪', '"', ',', '_',
-    '<i>', '</i>', '\r', '[', ']', '(', ')', '&#92', '!', '%', '$'
+    '<i>', '</i>', '\r', '[', ']', '(', ')', '\\', '!', '%', '$'
 ]
 
 
@@ -43,4 +43,5 @@ fn.lerDiretorio(caminho)
     .then(fn.removerSeVazio)
     .then(linhas => fn.removerSeApenasNumero(linhas))
     .then(agruparPalavras)
+    .then(fn.ordenarPorNumero('qtde', 'desc'))
     .then(console.log)
